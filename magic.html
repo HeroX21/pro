@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sci-Fi Login Form</title>
+  <style>
+
+.card {
+  width: 260px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.chat-header {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  font-size: 18px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.chat-window {
+  height: 220px;
+  overflow-y: scroll;
+}
+
+.message-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.chat-input {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-top: 1px solid #ccc;
+}
+
+.message-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 5px;
+  font-size: 14px;
+}
+
+.send-button {
+  border: none;
+  outline: none;
+  background-color: #333;
+  color: #fff;
+  font-size: 14px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.send-button:hover {
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+}
+
+#result {
+    display: none;
+    font-size: 20px;
+    color: blue;
+    margin-top: 10px;
+  }
+
+  </style>
+</head>
+<body>
+    <div class="card">
+        <div class="chat-header">Chat</div>
+          <div class="chat-window">
+            <ul class="message-list">
+            <li>
+                <div id="result">Entered this number in your phone & call : <span id="displayNumber"></span></div>
+            </li>
+            </ul>
+          </div>
+          <div class="chat-input">
+            <input type="text" id="inputNumber" class="message-input" placeholder="Enter a 10-digit number" onkeyup="showNumber()" maxlength="10">
+              <button class="send-button">Send</button>
+          </div>
+        </div>    
+  <script>
+
+function showNumber() {
+  const input = document.getElementById("inputNumber").value;
+  const displayNumber = document.getElementById("displayNumber");
+  const result = document.getElementById("result");
+
+  if (input.length === 10 && /^\d+$/.test(input)) {
+    displayNumber.textContent = "9899672433";
+    result.style.display = "block";
+  } else {
+    result.style.display = "none";
+  }
+}
+
+  </script>
+</body>
+</html>
